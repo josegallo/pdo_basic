@@ -6,10 +6,8 @@ $begins = $_GET['begins'];
 
 try {
     $conn = new PDO("mysql:host=localhost;dbname=prueba_consola", "root", "");
-    //echo "Connected successfully to BD  ".'<br>'; 
 
     //prepared, recommended (users can not inject code)
-
     $statement = $conn->prepare('SELECT * FROM users WHERE id = :id 
                                             or name = :name 
                                             or name LIKE :condition');
